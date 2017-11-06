@@ -1,0 +1,8 @@
+name: HSBXL Numbers
+type: module
+description: Number crunching; Stats
+core: 8.x
+package: HSBXL
+dependencies:
+  - hsbxl_members
+  - simplified_bookkeeping
