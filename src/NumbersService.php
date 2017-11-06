@@ -36,6 +36,57 @@ class NumbersService {
   }
 
 
+  public function getIncomeDonations() {
+
+  }
+
+  public function getIncomeFoodDrinks() {
+
+  }
+
+  public function getIncomeMembershipsRegular() {
+
+  }
+
+  public function getIncomeMembershipsSocial() {
+
+  }
+
+  public function getIncomeExpectedMembReg() {
+
+  }
+
+  public function getIncomeExpectedMembSoc() {
+
+  }
+
+  public function getPurchasesFixedCosts() {
+
+  }
+
+  public function getPurchasesFoodDrinks() {
+
+  }
+
+  public function getPurchasesMaterial() {
+
+  }
+
+  public function getMembersNew() {
+
+  }
+
+  public function getMembersReg() {
+
+  }
+
+  public function getMembersSoc() {
+
+  }
+
+  public function getMembersStopped() {
+
+  }
 
 }
 
