@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.receipt.field_income_expected_memb_soc
+  module:
+    - hsbxl_numbers
+id: receipt.receipt.field_income_expected_memb_soc
+field_name: field_income_expected_memb_soc
+entity_type: receipt
+bundle: receipt
+label: 'Income: expected: Memberships: social'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 0
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: €
+  suffix: ''
+field_type: decimal

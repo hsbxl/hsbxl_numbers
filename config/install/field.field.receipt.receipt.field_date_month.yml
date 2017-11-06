@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.receipt.field_date_month
+  module:
+    - hsbxl_numbers
+    - options
+id: receipt.receipt.field_date_month
+field_name: field_date_month
+entity_type: receipt
+bundle: receipt
+label: 'Date: Month'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

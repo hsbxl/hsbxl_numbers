@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.receipt.field_supporting_members_social
+  module:
+    - hsbxl_numbers
+id: receipt.receipt.field_supporting_members_social
+field_name: field_supporting_members_social
+entity_type: receipt
+bundle: receipt
+label: 'Supporting members: social fee'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

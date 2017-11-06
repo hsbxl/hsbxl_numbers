@@ -1,0 +1,195 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.receipt.receipt.field_date_month
+    - field.field.receipt.receipt.field_date_year
+    - field.field.receipt.receipt.field_income_donations
+    - field.field.receipt.receipt.field_income_expected_memb_reg
+    - field.field.receipt.receipt.field_income_expected_memb_soc
+    - field.field.receipt.receipt.field_income_food_drinks
+    - field.field.receipt.receipt.field_income_memberships_regular
+    - field.field.receipt.receipt.field_income_memberships_social
+    - field.field.receipt.receipt.field_purchases_fixed_costs
+    - field.field.receipt.receipt.field_purchases_food_drinks
+    - field.field.receipt.receipt.field_purchases_material
+    - field.field.receipt.receipt.field_supporting_members_new
+    - field.field.receipt.receipt.field_supporting_members_regular
+    - field.field.receipt.receipt.field_supporting_members_social
+    - field.field.receipt.receipt.field_supporting_members_stopped
+  module:
+    - hsbxl_numbers
+    - options
+    - user
+id: receipt.receipt.default
+targetEntityType: receipt
+bundle: receipt
+mode: default
+content:
+  field_date_month:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_date_year:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_income_donations:
+    weight: 10
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_income_expected_memb_reg:
+    weight: 11
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_income_expected_memb_soc:
+    weight: 12
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_income_food_drinks:
+    weight: 7
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_income_memberships_regular:
+    weight: 8
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_income_memberships_social:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_purchases_fixed_costs:
+    weight: 13
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_purchases_food_drinks:
+    weight: 14
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_purchases_material:
+    weight: 15
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_supporting_members_new:
+    weight: 3
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_supporting_members_regular:
+    weight: 1
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_supporting_members_social:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_supporting_members_stopped:
+    weight: 6
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

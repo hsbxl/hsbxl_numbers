@@ -1,8 +1,13 @@
-name: HSBXL Numbers
+name: 'HSBXL Numbers'
 type: module
-description: Number crunching; Stats
+description: 'Number crunching; Stats'
 core: 8.x
 package: HSBXL
 dependencies:
+  - field
+  - field_permissions
   - hsbxl_members
+  - hsbxl_numbers
+  - options
   - simplified_bookkeeping
+  - user

@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.receipt.field_date_year
+  module:
+    - hsbxl_numbers
+id: receipt.receipt.field_date_year
+field_name: field_date_year
+entity_type: receipt
+bundle: receipt
+label: 'Date: Year'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 2008
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
