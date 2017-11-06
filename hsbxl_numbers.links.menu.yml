@@ -1,0 +1,14 @@
+
+# Receipt menu items definition
+entity.receipt.collection:
+  title: 'Receipt list'
+  route_name: entity.receipt.collection
+  description: 'List Receipt entities'
+  parent: system.admin_structure
+  weight: 100
+
+receipt.admin.structure.settings:
+  title: Receipt settings
+  description: 'Configure Receipt entities'
+  route_name: receipt.settings
+  parent: system.admin_structure

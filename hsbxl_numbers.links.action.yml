@@ -1,0 +1,5 @@
+entity.receipt.add_form:
+  route_name: entity.receipt.add_form
+  title: 'Add Receipt'
+  appears_on:
+    - entity.receipt.collection

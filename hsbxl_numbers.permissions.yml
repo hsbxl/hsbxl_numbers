@@ -1,0 +1,22 @@
+add receipt entities:
+  title: 'Create new Receipt entities'
+
+administer receipt entities:
+  title: 'Administer Receipt entities'
+  description: 'Allow to access the administration form to configure Receipt entities.'
+  restrict access: true
+
+delete receipt entities:
+  title: 'Delete Receipt entities'
+
+edit receipt entities:
+  title: 'Edit Receipt entities'
+
+access receipt overview:
+  title: 'Access the Receipt overview page'
+
+view published receipt entities:
+  title: 'View published Receipt entities'
+
+view unpublished receipt entities:
+  title: 'View unpublished Receipt entities'

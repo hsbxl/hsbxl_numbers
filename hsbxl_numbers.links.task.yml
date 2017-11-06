@@ -1,0 +1,22 @@
+# Receipt routing definition
+receipt.settings_tab:
+  route_name: receipt.settings
+  title: 'Settings'
+  base_route: receipt.settings
+
+entity.receipt.canonical:
+  route_name: entity.receipt.canonical
+  base_route: entity.receipt.canonical
+  title: 'View'
+
+entity.receipt.edit_form:
+  route_name: entity.receipt.edit_form
+  base_route: entity.receipt.canonical
+  title: 'Edit'
+
+entity.receipt.delete_form:
+  route_name:  entity.receipt.delete_form
+  base_route:  entity.receipt.canonical
+  title: Delete
+  weight: 10
+

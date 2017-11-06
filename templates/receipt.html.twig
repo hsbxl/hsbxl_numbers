@@ -1,0 +1,22 @@
+{#
+/**
+ * @file receipt.html.twig
+ * Default theme implementation to present Receipt data.
+ *
+ * This template is used when viewing Receipt pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_receipt()
+ *
+ * @ingroup themeable
+ */
+#}
+<div{{ attributes.addClass('receipt') }}>
+  {% if content %}
+    {{- content -}}
+  {% endif %}
+</div>
