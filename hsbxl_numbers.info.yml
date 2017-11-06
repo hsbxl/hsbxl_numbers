@@ -4,6 +4,7 @@ description: 'Number crunching; Stats'
 core: 8.x
 package: HSBXL
 dependencies:
+  - ds
   - field
   - field_permissions
   - hsbxl_members
@@ -11,3 +12,4 @@ dependencies:
   - options
   - simplified_bookkeeping
   - user
+  - views
