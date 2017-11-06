@@ -1,6 +1,6 @@
 {
-  "name": "drupal/hsbxl_numbers",
-  "type": "drupal-module",
+  "name": "hsbxl/hsbxl_numbers",
+  "type": "drupal-custom-module",
   "description": "Number crunching; Stats",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
