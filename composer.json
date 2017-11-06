@@ -4,11 +4,11 @@
   "description": "Number crunching; Stats",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/hsbxl_numbers",
+  "homepage": "https://github.com/hsbxl/hsbxl_numbers",
   "minimum-stability": "dev",
   "support": {
-    "issues": "https://www.drupal.org/project/issues/hsbxl_numbers",
-    "source": "http://cgit.drupalcode.org/hsbxl_numbers"
+    "issues": "https://github.com/hsbxl/hsbxl_numbers/issues",
+    "source": "https://github.com/hsbxl/hsbxl_numbers"
   },
   "require": { }
 }
