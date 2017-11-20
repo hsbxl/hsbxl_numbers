@@ -94,7 +94,6 @@ class NumbersService {
 
   public function getPurchasesFixedCosts() {
     $data = $this->getPurchasesData('fixed costs');
-    ksm($data);
     return $data['total'];
   }
 

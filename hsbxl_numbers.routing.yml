@@ -1,9 +1,27 @@
-hsbxl_routing.feed:
-  path: '/numbers/feed/{year}/{month}'
+hsbxl_routing.year:
+  path: '/numbers/yearfeed/{year}'
   defaults:
-    _controller: '\Drupal\hsbxl_numbers\Controller\feed::public'
-    _title: 'Numbers Feed'
+    _controller: '\Drupal\hsbxl_numbers\Controller\feed::year'
+    _title: 'Numbers Feed year'
+    year: 2017
+  requirements:
+    _permission: 'access content'
+
+hsbxl_routing.month:
+  path: '/numbers/monthfeed/{year}/{month}'
+  defaults:
+    _controller: '\Drupal\hsbxl_numbers\Controller\feed::month'
+    _title: 'Numbers Feed month'
     year: 2017
     month: 10
+  requirements:
+    _permission: 'access content'
+
+hsbxl_routing.graph:
+  path: '/numbers/graph/{year}'
+  defaults:
+    _controller: '\Drupal\hsbxl_numbers\Controller\graph::public'
+    _title: 'HSBXL books: graph'
+    year: 2017
   requirements:
     _permission: 'access content'

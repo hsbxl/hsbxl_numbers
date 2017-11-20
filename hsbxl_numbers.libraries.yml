@@ -1,0 +1,12 @@
+graph:
+  version: 1.x
+  js:
+    js/graph.js: {}
+  dependencies:
+      - hsbxl_numbers/plotly
+      - core/jquery
+
+plotly:
+  version: 1.5.0
+  js:
+    https://cdn.plot.ly/plotly-1.5.0.min.js: {}
