@@ -1,0 +1,4 @@
+services:
+  hsbxl_numbers.numbers:
+    class: Drupal\hsbxl_numbers\NumbersService
+    arguments: ['@entity.query', '@entity.manager', '@simplified_bookkeeping.bookkeeping', '@hsbxl_members.membership']

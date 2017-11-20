@@ -1,0 +1,9 @@
+hsbxl_routing.feed:
+  path: '/numbers/feed/{year}/{month}'
+  defaults:
+    _controller: '\Drupal\hsbxl_numbers\Controller\feed::public'
+    _title: 'Numbers Feed'
+    year: 2017
+    month: 10
+  requirements:
+    _permission: 'access content'
