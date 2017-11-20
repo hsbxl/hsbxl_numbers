@@ -32,8 +32,20 @@ class NumbersService {
   }
 
   public function setMonth($month) {
-    $this->month = $month;
+    $months = range(1, 12);
+    if(in_array($month, $months)) {
+      $this->month = $month;
+    }
   }
+
+  public function getYear() {
+    return $this->year;
+  }
+
+  public function getMonth() {
+    return $this->month;
+  }
+
 
   public function getDateStart() {
     $date = new DrupalDateTime($this->year . '-' . $this->month . '-1');
