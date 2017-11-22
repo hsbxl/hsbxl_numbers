@@ -28,13 +28,31 @@ class Graph extends ControllerBase implements ContainerInjectionInterface {
     );
   }
 
-  public function public($year) {
+  public function year($year) {
     return [
       '#markup' => '<div id="hsbxl_graph"></div>',
       '#attached' => [
         'library' => [
-          'hsbxl_numbers/graph',
+          'hsbxl_numbers/graph.year',
           drupal_get_path('module', 'plotly_js') . '/plotly_js/plotly_js',
+        ],
+      ],
+    ];
+  }
+
+  public function month($year, $month) {
+    return [
+      '#markup' => '<div id="hsbxl_graph"></div></div><table id="sales"><caption>Income</caption><thead><tr><th>Date</th><th>amount</th><th>tags</th></tr></thead><tbody></tbody></table>',
+      '#attached' => [
+        'drupalSettings' => [
+          'simplified_bookkeeping_monthgraph' => [
+            'month' => $month,
+            'year' => $year
+          ],
+        ],
+        'library' => [
+          'hsbxl_numbers/graph.month',
+          drupal_get_path('module', 'plotly_js') . '/plotly_js/plotly_js'
         ],
       ],
     ];

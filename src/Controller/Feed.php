@@ -84,6 +84,7 @@ class Feed extends ControllerBase implements ContainerInjectionInterface {
 
     $difference = $purchases_total + $income_total;
 
+
     $response_data = [
       'month' => $this->numbers->getMonth() . '/' . $this->numbers->getYear(),
       'getIncomeMemberships' => $this->numbers->getIncomeMemberships(),
@@ -97,6 +98,36 @@ class Feed extends ControllerBase implements ContainerInjectionInterface {
       'getPurchasesTotal' => round($purchases_total, 2),
       'getDifference' => round($difference, 2),
     ];
+
+    $sales = $this->numbers->getSalesData();
+    $response_data['sales'] = [];
+    $i = 0;
+    foreach ($sales['lines'] as $sale) {
+      $response_data['sales'][$i] = [
+        'date' => $sale['date'],
+        'amount' => $sale['amount'],
+        'tags' => [],
+      ];
+
+      foreach($sale['tags'] as $tag) {
+        $response_data['sales'][$i]['tags'][] = $tag;
+      }
+      $i++;
+    }
+
+    $purchases = $this->numbers->getPurchasesData();
+    $response_data['purchases'] = [];
+    foreach ($purchases['lines'] as $purchase) {
+      $response_data['purchases'][$purchase['id']] = [
+        'date' => $purchase['date'],
+        'amount' => $purchase['amount'],
+        'tags' => [],
+      ];
+
+      foreach($purchase['tags'] as $tag) {
+        $response_data['purchases'][$purchase['id']]['tags'][] = $tag;
+      }
+    }
 
     $response = new Response();
     $response->setContent(json_encode($response_data));

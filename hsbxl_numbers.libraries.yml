@@ -1,10 +1,20 @@
-graph:
+graph.year:
   version: 1.x
   js:
-    js/graph.js: {}
+    js/graph_year.js: {}
   dependencies:
       - hsbxl_numbers/plotly
       - core/jquery
+      - core/drupalSettings
+
+graph.month:
+  version: 1.x
+  js:
+    js/graph_month.js: {}
+  dependencies:
+      - hsbxl_numbers/plotly
+      - core/jquery
+      - core/drupalSettings
 
 plotly:
   version: 1.5.0
