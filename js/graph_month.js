@@ -14,9 +14,9 @@
     });
 
     var trace1 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['In: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [data.getIncomeMemberships, null],
-      name: 'Income Memberships',
+      name: 'In Memberships',
       type: 'bar',
       marker: {
         color: '#5E9732'
@@ -24,9 +24,9 @@
     };
 
     var trace2 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['In: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [data.getIncomeDonations, null],
-      name: 'Income Donations',
+      name: 'In Donations',
       type: 'bar',
       marker: {
         color: '#87BC5E'
@@ -34,9 +34,9 @@
     };
 
     var trace3 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['In: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [data.getIncomeFixedCosts, null],
-      name: 'Income fixed costs',
+      name: 'In fixed costs',
       type: 'bar',
       marker: {
         color: '#3C7113'
@@ -44,9 +44,9 @@
     };
 
     var trace4 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['In: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [data.getIncomeFoodDrinks, null],
-      name: 'Income Food & Drinks',
+      name: 'In Food & Drinks',
       type: 'bar',
       marker: {
         color: '#214B00'
@@ -54,9 +54,9 @@
     };
 
     var trace5 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['In: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [null, Math.abs(data.getPurchasesFoodDrinks)],
-      name: 'Spending Food & Drinks',
+      name: 'Out Food & Drinks',
       type: 'bar',
       marker: {
         color: '#FF4132'
@@ -64,9 +64,9 @@
     };
 
     var trace6 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['Income: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [null, Math.abs(data.getPurchasesMaterial)],
-      name: 'Spending Material',
+      name: 'Out Material',
       type: 'bar',
       marker: {
         color: '#D4726A'
@@ -74,9 +74,9 @@
     };
 
     var trace7 = {
-      x: ['Income: €' + data.getincomeTotal, 'Spendings: €' + Math.abs(data.getPurchasesTotal)],
+      x: ['Income: €' + data.getincomeTotal, 'Out: €' + Math.abs(data.getPurchasesTotal)],
       y: [null, Math.abs(data.getPurchasesFixedCosts)],
-      name: 'Spending Fixed costs',
+      name: 'Out Fixed costs',
       type: 'bar',
       marker: {
         color: '#801D15'
@@ -87,16 +87,18 @@
     var graphlayout = {barmode: 'stack'};
 
     Plotly.newPlot('hsbxl_graph', graphdata, graphlayout);
-    var myPlot = document.getElementById('hsbxl_graph');
-
-    myPlot.on('plotly_click', function(data){
-      console.log(data);
-    });
 
 
     $.each(data.sales, function (i, item) {
       var tags = item.tags.join(' ');
       $( "table#sales tbody" ).append(
+          "<tr class=" + tags + "><td>" + item.date + "</td><td>" + item.amount + "</td><td>" + tags + "</td></tr>"
+      );
+    })
+
+    $.each(data.purchases, function (i, item) {
+      var tags = item.tags.join(' ');
+      $( "table#purchases tbody" ).append(
           "<tr class=" + tags + "><td>" + item.date + "</td><td>" + item.amount + "</td><td>" + tags + "</td></tr>"
       );
     })

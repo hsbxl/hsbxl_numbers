@@ -40,9 +40,21 @@ class Graph extends ControllerBase implements ContainerInjectionInterface {
     ];
   }
 
+  /**
+   * @param $year
+   * @param $month
+   *
+   * @return string
+   */
+  public function monthPageTitle($year, $month) {
+    return 'HSBXL books ' . $month . '/' . $year;
+  }
+
   public function month($year, $month) {
     return [
-      '#markup' => '<div id="hsbxl_graph"></div></div><table id="sales"><caption>Income</caption><thead><tr><th>Date</th><th>amount</th><th>tags</th></tr></thead><tbody></tbody></table>',
+      '#markup' => '<div id="hsbxl_graph"></div></div>
+<table id="sales"><caption>Income</caption><thead><tr><th>Date</th><th>amount</th><th>tags</th></tr></thead><tbody></tbody></table>
+<table id="purchases"><caption>Spendings</caption><thead><tr><th>Date</th><th>amount</th><th>tags</th></tr></thead><tbody></tbody></table>',
       '#attached' => [
         'drupalSettings' => [
           'simplified_bookkeeping_monthgraph' => [

@@ -82,6 +82,11 @@ class NumbersService {
     return round($data['total'], 2);
   }
 
+  public function getIncomeGoodies() {
+    $data = $this->getSalesData('goodies');
+    return round($data['total'], 2);
+  }
+
 
   public function getPurchasesFoodDrinks() {
     $data = $this->getPurchasesData('food & drinks');
@@ -90,6 +95,11 @@ class NumbersService {
 
   public function getPurchasesMaterial() {
     $data = $this->getPurchasesData('material');
+    return round($data['total'], 2);
+  }
+
+  public function getPurchasesGoodies() {
+    $data = $this->getPurchasesData('goodies');
     return round($data['total'], 2);
   }
 

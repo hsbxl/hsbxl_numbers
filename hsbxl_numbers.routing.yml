@@ -30,7 +30,7 @@ hsbxl_routing.monthgraph:
   path: '/numbers/graph/month/{year}/{month}'
   defaults:
     _controller: '\Drupal\hsbxl_numbers\Controller\graph::month'
-    _title: 'HSBXL monthbooks: graph'
+    _title_callback: '\Drupal\hsbxl_numbers\Controller\graph::monthPageTitle'
     year: 2017
     month: 10
   requirements:
