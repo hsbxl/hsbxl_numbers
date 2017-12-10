@@ -196,22 +196,88 @@ class NumbersService {
     return $response;
   }
 
+  public function getMembersUnique() {
+    $result = \Drupal::entityQuery('membership')
+      ->condition('field_year', $this->year)
+      ->condition('field_month', $this->month)
+      ->condition('status', 1)
+      ->sort('field_year' , 'DEC')
+      ->sort('field_month' , 'DESC')
+      ->execute();
+
+    $memberships = \Drupal::entityTypeManager()
+      ->getStorage('membership')
+      ->loadMultiple($result);
+
+    $member_memberships = [];
+    foreach ($memberships as $membership) {
+      if(!isset($member_memberships[$membership->field_membership_member->target_id])) {
+        $member_memberships[$membership->field_membership_member->target_id] = $membership->id();
+      }
+    }
+
+    return count($member_memberships);
+  }
+
   public function getMembersNew() {
 
-  }
+    $query = db_select('membership', 'm');
+      //->fields('year', ['field_year_value'])
+  //    ->fields('month', ['field_month_value'])
+      //->fields('u', ['uid']);
+//      ->orderBy('field_year_value', 'DESC');
+    /*$query->join('membership__field_membership_member', 'membership_member', 'membership_member.entity_id = m.id');
+    $query->join('membership__field_year', 'year', 'year.entity_id = m.id');
+    $query->join('membership__field_month', 'month', 'month.entity_id = m.id');
+    $query->join('users', 'u', 'u.uid = membership_member.field_membership_member_target_id');
+    $query->join('users_field_data', 'ud', 'u.uid = ud.uid');
+    $query->join('user__field_first_name', 'ufn', 'u.uid = ufn.entity_id');
+    $query->join('user__field_last_name', 'uln', 'u.uid = uln.entity_id');*/
+    //$query->groupBy('u.uid');
 
-  public function getMembersReg() {
+    //$result = $query->execute();
+    foreach ($result as $record) {
+      ksm($record);
+    }
 
-  }
 
-  public function getMembersSoc() {
+    /*$result = \Drupal::entityQuery('membership')
+      ->condition('field_year', $this->year)
+      ->condition('field_month', $this->month)
+      ->condition('status', 1)
+      ->sort('field_year' , 'DEC')
+      ->sort('field_month' , 'DESC')
+      ->execute();
 
+    $memberships = \Drupal::entityTypeManager()
+      ->getStorage('membership')
+      ->loadMultiple($result);
+
+    $member_memberships = [];
+    foreach ($memberships as $membership) {
+      $monthback = new DrupalDateTime($this->year . '-' . $this->month . '-1 -1 month');
+      $before = \Drupal::entityQuery('membership')
+        ->condition('field_year', $monthback->format('Y'), '<')
+        ->condition('field_month', $monthback->format('m'), '<')
+        ->condition('field_membership_member', $membership->field_membership_member->target_id)
+        ->count()
+        ->execute();
+
+      if(!$before) {
+        $member = current($membership->get('field_membership_member')->referencedEntities());
+        $member_memberships[$membership->field_membership_member->target_id] = $member->field_first_name->value . ' ' . $member->field_first_name->value;
+        unset($member);
+      }
+    }*/
+
+    return NULL;
+
+    return count($member_memberships);
   }
 
   public function getMembersStopped() {
 
   }
-
 }
 
 

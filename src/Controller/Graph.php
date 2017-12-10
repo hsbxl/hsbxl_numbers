@@ -51,6 +51,11 @@ class Graph extends ControllerBase implements ContainerInjectionInterface {
   }
 
   public function month($year, $month) {
+
+    $this->numbers->setYear($year);
+    $this->numbers->setMonth($month);
+    $this->numbers->getMembersNew();
+
     return [
       '#markup' => '<div id="hsbxl_graph"></div></div>
 <table id="sales"><caption>Income</caption><thead><tr><th>Date</th><th>amount</th><th>tags</th></tr></thead><tbody></tbody></table>

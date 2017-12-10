@@ -97,6 +97,8 @@ class Feed extends ControllerBase implements ContainerInjectionInterface {
       'getPurchasesFixedCosts' => $this->numbers->getPurchasesFixedCosts(),
       'getPurchasesTotal' => round($purchases_total, 2),
       'getDifference' => round($difference, 2),
+      'getMembersUnique' => $this->numbers->getMembersUnique(),
+      'getMembersNew' => $this->numbers->getMembersNew(),
     ];
 
     $sales = $this->numbers->getSalesData();
